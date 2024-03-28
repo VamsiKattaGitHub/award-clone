@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Transition</title>
+<style>
+  .container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .image {
+    display: block;
+    width: 100%; /* Adjust width as needed */
+    height: auto; /* Adjust height as needed */
+  }
+
+  .button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 40px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .container:hover .button {
+    opacity: 1;
+  }
+  
+  .innersitename{
+   color: grey;
+   font-size: 20px;
+   margin:0
+    }
+    .para{
+      font-size: 60px;
+      font-weight: bold;
+      margin:0;
+      margin-top: 10px;
+      color: white;
+    }
+    #mainContainer{
+      position: absolute;
+      bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+  <img class="image" src="images/banner-2.jpg" alt="Your Image">
+  <button class="button">Click Me</button>
+  <div id="mainContainer">
+    <div id="siteName">
+      <p class="innersitename">Site Name</p>
+      <p class="para">Jeff Koons Moon Phases</p>
+    </div>
+  </div>
+</div>
+<script>
+  function timer1(){
+    document.getElementById('siteName').style.transform='translateY(-4px)'
+    document.getElementById('siteName').style.transition='transform 0.1ss'
+  }
+  function timer2(){
+    document.getElementById('siteName').style.display='none'
+  }
+  setTimeout(timer1,1000)
+  setTimeout(timer2,1200)
+</script>
+</body>
+</html>

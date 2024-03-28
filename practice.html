@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Document</title>
+  <style>
+    body{
+      height:3000px
+    }
+   .ins{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:180px
+   }
+   .inner1{
+    display: flex;
+    align-items: center;
+    background:transparent;
+    width:220px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    justify-content: space-between;
+   }
+   img{
+    width:30px;
+    
+  }
+   button{
+   border: none;
+   background:transparent;
+   padding-left: 15px;
+   border-top-left-radius: 8px;
+   border-bottom-left-radius: 8px;
+   }
+   input{
+    height:40px;
+    background:transparent;
+    outline: 0;
+    border: none;
+    flex: 1;
+   }
+   #container{
+    display: flex;
+    width:60%;
+    margin: auto;
+    border-radius: 8px;
+    width: 875px;
+    
+   }
+   i{
+    margin-right: 30px;
+   }
+   #bottom-div{
+    background:black;
+    width:60%;
+    margin: auto;
+    height:500px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+   }
+   #main{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: fit-content;
+    margin:auto
+   }
+ .banner{
+  width:100%;
+  z-index: -1;
+  position: absolute;
+  top:100px
+ }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <div id="container">
+      <button><img src="images/search-icon.png" alt=""></button>
+      <input type="text" placeholder="Search in Inspiration" id="searchHere">
+      <div class="inner1">
+        <div>IN</div>
+        <div class="ins">
+          Inspiration
+          <i class="fa fa-angle-down" style="font-size:24px"></i>
+        </div>
+      </div>
+    </div>
+    <div id="bottom-div">
+       hiigdmg;l;glg;
+    </div>
+  </div>
+  <img src="images/mg-cover.jpg" alt="" class="banner">
+    
+
+  <script>
+    const element=document.getElementById('searchHere');
+    element.addEventListener('click',hello)
+    function hello()
+    {
+      document.getElementById('bottom-div').style.display='block';
+      document.getElementById('container').style.background='#222222';
+      document.getElementById('container').style.fill='#7a7a7a';
+      document.getElementById('container').style.color='white';
+      document.getElementById('main').style.background='black';
+      setTimeout(function() {
+        document.getElementById('bottom-div').style.opacity = 1;
+      }, 100);
+    }
+    document.body.addEventListener('click', function(event) {
+      if (!event.target.closest('#bottom-div') && !event.target.closest('#searchHere')) {
+        document.getElementById('bottom-div').style.opacity = 0;
+        setTimeout(function() {
+          document.getElementById('bottom-div').style.display='none';
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>

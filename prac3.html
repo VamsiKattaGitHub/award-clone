@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continuous Marquee</title>
+  <style>
+    .marquee-container{
+      display: flex;
+      width:800%;
+      font-size: 30px;
+    }
+    .marquee-content{
+      animation: ex infinite 10s linear;    
+    }
+    @keyframes ex{
+     from{ transform:translateX(0)}
+     to {transform: translateX(-100%);}
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee-container">
+    <div class="marquee-content">— Site of the Day -<strong> 7.5 </strong>— Mar 14, 2024 —
+      Jeff Koons Moon Phases</div>
+      <div class="marquee-content">— Site of the Day -<strong> 7.5 </strong>— Mar 14, 2024 —
+        Jeff Koons Moon Phases</div>
+        <div class="marquee-content">— Site of the Day -<strong> 7.5 </strong>— Mar 14, 2024 —
+          Jeff Koons Moon Phases</div>
+  </div>
+</body>
+</html>
